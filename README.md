@@ -37,3 +37,47 @@ function solution(numbers) {
 }
 ```
 
+## stack & queue - 기능 개발
+
+//1. 각 기능은 진도가 100%일 때 서비스 반영
+//2. 진도 : progresses 속도: speeds
+//3. 첫번째 기능이 끝나고 그 다음 내용 배포 가능 - return 2,1
+
+
+
+```
+function solution(progresses, speeds) {
+  let arr = [];
+  
+
+   while(progresses.length > 0) {
+       let count = 0;
+    
+        for(let i=0; i < progresses.length; i++) {
+            progresses[i] += speeds[i];
+     }
+
+     while(progresses[0] >= 100) {
+        progresses.shift();
+        speeds.shift();
+        count++;
+     }
+        
+    if(count > 0) {
+      arr.push(count);
+    }
+        
+  }
+
+  return arr;
+}
+
+// let progresses = [93,30,55];
+// let speeds = [1,30,5];
+
+// console.log(solution(progresses,speeds));
+```
+
+
+
+
