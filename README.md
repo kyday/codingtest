@@ -88,7 +88,7 @@ function solution(progresses, speeds) {
 2. 나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣기
 3. 그렇지 않으면 J를 인쇄
 
-
+```
 function solution(priorities, location) {
     const queue = priorities.map((value, i) => ({ index: i, value }));
     const anwer = [];
@@ -103,6 +103,6 @@ function solution(priorities, location) {
     }
     return anwer.findIndex(item => item.index === location) + 1;
 }
-
+```
 
 
