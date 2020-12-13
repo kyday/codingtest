@@ -80,3 +80,27 @@ function solution(progresses, speeds) {
 // console.log(solution(progresses,speeds));
 ```
 
+## hash - 완주하지 못한 선수
+
+[ 문제 설명 ]  
+1. 마라톤 선수들이 참여했지만 단 한명의 선수를 제외하고 모든 마라톤 선수는 완주하였음
+2. 마라톤에 참여한 선수들의 이름이 담긴 배열 - participant, 완주한 선수들의 이름이 담긴 배열 - completion
+
+- 완주하지 못한 선수의 이름을 return 하도록 하는 문제
+풀이 : participant, completion 배열을 비교하기 위해 sort 메소드를 이용해 정렬을 하였고, answer 라는 변수를 만들어서
+filter 메소드를 이용해 completion 배열에 담긴것을 비교를 해서 없는 사람이 있으면 answer로 리턴하게 만들었다.
+
+
+```
+function solution(participant, completion) {
+    
+    participant.sort();
+    completion.sort();
+    
+    const answer = participant.filter((x,index) => x !== completion[index]);
+    
+    
+    return answer[0];
+
+}
+```
